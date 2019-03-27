@@ -1,6 +1,6 @@
 # pet
 
-> [bs]pet cms
+> ElementUIDesign
 
 ## Build Setup
 
