@@ -7,7 +7,7 @@
     <el-menu-item index="1">
       <span slot="title">首页</span>
     </el-menu-item>
-    <el-dropdown @command="toCommand" style="float: right;">
+    <el-dropdown @command="toCommand" style="float: right;margin-top: 17px;">
       <span class="sp-user-info">
         <img class="img-head" src="https://fs.591iq.cn/group1/M00/0C/4A/rBKYP1wtZySAVOwJAADbQioY8Y4860.png"/>
         <span class="sp-name">小红 <i class="i-icon el-icon-arrow-down el-icon--right"></i></span>
@@ -49,7 +49,6 @@
     border-radius: 50%;
     margin-right: 5px;
     display: inline-block;
-    margin-top: 17px;
   }
 
   .sp-user-info .sp-name {
