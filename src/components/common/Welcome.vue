@@ -22,7 +22,7 @@
 
 <script>
   export default {
-    name: "welcome",
+    name: "Welcome",
     data() {
       return {
         reverse: true,

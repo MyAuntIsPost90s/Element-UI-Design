@@ -67,9 +67,9 @@ let Gateway = {
 let FormValid = {
   check(param) {
     if (param && param.valid) {
-      for (let feild in param) {
-        let val = param[feild];
-        let validStr = param.valid[feild];
+      for (let field in param) {
+        let val = param[field];
+        let validStr = param.valid[field];
         if (!validStr) {
           continue;
         }
@@ -78,7 +78,7 @@ let FormValid = {
           continue;
         }
         if (!valid.name) {
-          valid.name = feild;
+          valid.name = field;
         }
         if (valid.notEmpty === true) { //判断非空
           if (!val) {

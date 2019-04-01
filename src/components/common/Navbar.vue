@@ -3,23 +3,25 @@
     :router="true"
     :default-active="activeIndex"
     class="el-menu-demo"
-    mode="horizontal"
-    @select="handleSelect">
+    mode="horizontal">
     <el-menu-item index="1">
       <span slot="title">首页</span>
     </el-menu-item>
-    <el-submenu index="2" style="float: right">
-      <template slot="title">
+    <el-dropdown @command="toCommand" style="float: right;">
+      <span class="sp-user-info">
         <img class="img-head" src="https://fs.591iq.cn/group1/M00/0C/4A/rBKYP1wtZySAVOwJAADbQioY8Y4860.png"/>
-        <span slot="title">小红</span>
-      </template>
-      <el-menu-item index="User"><i class="el-icon-info"></i><span slot="title">个人中心</span></el-menu-item>
-      <el-menu-item index="LoginTheme2"><i class="el-icon-error"></i><span slot="title">退出</span></el-menu-item>
-    </el-submenu>
+        <span class="sp-name">小红 <i class="i-icon el-icon-arrow-down el-icon--right"></i></span>
+      </span>
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item command="SetPwd"><i class="el-icon-info"></i><span>个人中心</span></el-dropdown-item>
+        <el-dropdown-item command="LoginTheme2"><i class="el-icon-error"></i><span>退出</span></el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
   </el-menu>
 </template>
 
 <script>
+
   export default {
     name: 'NavBar',
     data() {
@@ -28,18 +30,32 @@
       };
     },
     methods: {
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath);
+      toCommand(name) {
+        this.$router.push({name: name});
       }
     }
   }
 </script>
 
 <style scoped>
+  .sp-user-info {
+    display: inline-block;
+    padding-right: 20px;
+  }
+
   .img-head {
     height: 25px;
     width: 25px;
     border-radius: 50%;
     margin-right: 5px;
+    display: inline-block;
+    margin-top: 17px;
   }
+
+  .sp-user-info .sp-name {
+    overflow: hidden;
+    display: inline-block;
+    height: 24px;
+  }
+
 </style>
